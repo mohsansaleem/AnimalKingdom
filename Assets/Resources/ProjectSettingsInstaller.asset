@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d959224d09e3514ea079b28b2010337, type: 3}
+  m_Name: ProjectSettingsInstaller
+  m_EditorClassIdentifier: 
+  ProjectContextInstaller:
+    DefaultGameState: {fileID: 11400000, guid: c1aefaa497380724c9b8b31bbc2fb822, type: 2}
+    MetaDataAsset: {fileID: 11400000, guid: baeba42f773325946b89f63ec75f7ebd, type: 2}
+    PopupDialogPrefab: {fileID: 1438647726908000, guid: 55663a41cd620534e88181cbc2008851,
+      type: 3}
+    PopupButtonPrefab: {fileID: 1195702311905236, guid: 011e752eac72e9f45b78a238c936e722,
+      type: 3}
+    HeroPrefab: {fileID: 1577342338719342523, guid: 60dedcdeaa54d5848ab8c6c2d3ea7e3b,
+      type: 3}
+    AnimalsPrefabs:
+    - Type: 0
+      Prefab: {fileID: 1965851562501010, guid: ea03bf2d53c9d514fa0123a55a6ee1e8, type: 3}
+    - Type: 1
+      Prefab: {fileID: 1522729216997060, guid: 5624c38b2daf5d342bfe70a670f185da, type: 3}
+    - Type: 2
+      Prefab: {fileID: 1287295899898638, guid: 8e75adc8b4e753f4cb11a5385cd14c0b, type: 3}
+    - Type: 3
+      Prefab: {fileID: 1206511787925574, guid: 717b05ac19e720649a203f6a57b18a94, type: 3}
+    - Type: 4
+      Prefab: {fileID: 1055064919166404, guid: 6a6216b577f4ab14a87e7b18319842f3, type: 3}

@@ -1,0 +1,51 @@
+{
+  "GameTime": 400.0,
+  "FarmSpace": 10,
+  "HeroSpace": 5,
+  "Animals": [
+    {
+      "AnimalType": 0,
+      "PenPoints": 2,
+      "PatrolSpeed": 1.0,
+      "OccupiedSpace": 1,
+      "MoveSpeed": 5.0
+    },
+    {
+      "AnimalType": 1,
+      "PenPoints": 2,
+      "PatrolSpeed": 1.0,
+      "OccupiedSpace": 1,
+      "MoveSpeed": 5.0
+    },
+    {
+      "AnimalType": 2,
+      "PenPoints": 5,
+      "PatrolSpeed": 1.0,
+      "OccupiedSpace": 1,
+      "MoveSpeed": 3.0
+    },
+    {
+      "AnimalType": 3,
+      "PenPoints": 1,
+      "PatrolSpeed": 1.0,
+      "OccupiedSpace": 1,
+      "MoveSpeed": 3.0
+    },
+    {
+      "AnimalType": 4,
+      "PenPoints": 4,
+      "PatrolSpeed": 2.0,
+      "OccupiedSpace": 1,
+      "MoveSpeed": 6.0
+    }
+  ],
+  "HeroLevels": [
+    {
+      "Level": 1,
+      "MaxSpeed": 12.0,
+      "SpeedJump": 1,
+      "SpeedJumpInterval": 10,
+      "MoveSpeed": 5.0
+    }
+  ]
+}

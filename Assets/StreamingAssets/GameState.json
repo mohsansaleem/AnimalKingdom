@@ -1,0 +1,77 @@
+{
+  "HeroState": {
+    "HeroLevel": 1,
+    "AnimalsInGroup": [],
+    "CurrentPosition": {
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.0
+    }
+  },
+  "AnimalsStates": [
+    {
+      "Id": 1,
+      "AnimalType": 0,
+      "CurrentPosition": {
+        "x": 10.0,
+        "y": 0.0,
+        "z": 50.0
+      }
+    },
+    {
+      "Id": 2,
+      "AnimalType": 1,
+      "CurrentPosition": {
+        "x": 38.0,
+        "y": 0.0,
+        "z": -10.0
+      }
+    },
+    {
+      "Id": 3,
+      "AnimalType": 2,
+      "CurrentPosition": {
+        "x": -2.0,
+        "y": 0.0,
+        "z": 25.0
+      }
+    },
+    {
+      "Id": 4,
+      "AnimalType": 3,
+      "CurrentPosition": {
+        "x": 25.0,
+        "y": 0.0,
+        "z": -20.0
+      }
+    },
+    {
+      "Id": 5,
+      "AnimalType": 2,
+      "CurrentPosition": {
+        "x": 20.0,
+        "y": 0.0,
+        "z": 35.0
+      }
+    },
+    {
+      "Id": 6,
+      "AnimalType": 3,
+      "CurrentPosition": {
+        "x": 40.0,
+        "y": 0.0,
+        "z": 0.0
+      }
+    },
+    {
+      "Id": 7,
+      "AnimalType": 4,
+      "CurrentPosition": {
+        "x": 45.0,
+        "y": 0.0,
+        "z": 20.0
+      }
+    }
+  ],
+  "Coins": 0.0
+}
