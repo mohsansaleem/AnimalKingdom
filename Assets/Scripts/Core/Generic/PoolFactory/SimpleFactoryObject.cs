@@ -1,6 +1,6 @@
 ﻿using RSG;
 
-namespace pg.core.assets
+namespace PG.Core.Generic.PoolFactory
 {
     public class SimpleFactoryObject : FactoryObject
     {

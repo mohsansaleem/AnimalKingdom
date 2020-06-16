@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zenject;
 
-namespace PG.Core
+namespace PG.Core.Generic
 {
     public class AsyncSceneLoader : ISceneLoader
     {

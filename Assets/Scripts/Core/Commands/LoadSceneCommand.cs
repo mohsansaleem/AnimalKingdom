@@ -1,4 +1,5 @@
-﻿using PG.Core.installer;
+﻿using PG.Core.Generic;
+using PG.Core.installer;
 using Zenject;
 
 namespace PG.Core.Commands

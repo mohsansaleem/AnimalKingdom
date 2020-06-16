@@ -1,7 +1,7 @@
 ﻿using RSG;
 using UnityEngine.SceneManagement;
 
-namespace PG.Core
+namespace PG.Core.Generic
 {
     public interface ISceneLoader
     {

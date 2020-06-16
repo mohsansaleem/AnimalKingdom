@@ -1,4 +1,0 @@
-﻿namespace PG.animalKingdom.installer
-{
-
-}

@@ -2,7 +2,7 @@
 using UnityEngine;
 using Zenject;
 
-namespace pg.core.assets
+namespace PG.Core.Generic.PoolFactory
 {
     public class FactoryObjectParams
     {
