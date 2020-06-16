@@ -46,10 +46,7 @@ namespace PG.Core.Context
         {
             if (StateBehaviours.ContainsKey(stateType))
             {
-                if (CurrentStateBehaviour != null)
-                {
-                    CurrentStateBehaviour.OnStateExit();
-                }
+                CurrentStateBehaviour?.OnStateExit();
                 CurrentStateBehaviour = StateBehaviours[stateType];
                 
                 CurrentStateBehaviour.OnStateEnter();
@@ -67,20 +64,14 @@ namespace PG.Core.Context
 
         public virtual void Tick()
         {
-            if (CurrentStateBehaviour != null)
-            {
-                CurrentStateBehaviour.Tick();
-            }
+            CurrentStateBehaviour?.Tick();
         }
 
         public virtual void Dispose()
         {
             SignalBus.Unsubscribe<RequestStateChangeSignal>(GoToState);
 
-            if (CurrentStateBehaviour != null)
-            {
-                CurrentStateBehaviour.OnStateExit();
-            }
+            CurrentStateBehaviour?.OnStateExit();
 
             Disposables.Dispose();
 

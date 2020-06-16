@@ -65,10 +65,7 @@ namespace PG.AnimalKingdom.Views.GamePlay
         {
             if (_stateBehaviours.ContainsKey(stateType))
             {
-                if (_currentStateBehaviour != null)
-                {
-                    _currentStateBehaviour.OnStateExit();
-                }
+                _currentStateBehaviour?.OnStateExit();
 
                 _currentStateBehaviour = _stateBehaviours[stateType];
                 
@@ -78,18 +75,12 @@ namespace PG.AnimalKingdom.Views.GamePlay
 
         public void Update()
         {
-            if (_currentStateBehaviour != null)
-            {
-                _currentStateBehaviour.Tick();
-            }
+            _currentStateBehaviour?.Tick();
         }
 
         private void OnDestroy()
         {
-            if (_currentStateBehaviour != null)
-            {
-                _currentStateBehaviour.OnStateExit();
-            }
+            _currentStateBehaviour?.OnStateExit();
 
             _stateBehaviours.Clear();
         }

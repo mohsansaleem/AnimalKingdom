@@ -55,10 +55,7 @@ namespace PG.AnimalKingdom.Generic.UI
 
         private void ButtonClicked()
         {
-            if (_onClickedEvent != null)
-            {
-                _onClickedEvent.Invoke (this);
-            }
+            _onClickedEvent?.Invoke (this);
         }
 
         public void SetLabel(string text)

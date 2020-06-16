@@ -13,17 +13,11 @@ namespace PG.Core.Commands
             _sceneLoader.LoadScene (loadParams.Scene).Done(
                 () =>
                 {
-                    if (loadParams.OnComplete != null)
-                    {
-                        loadParams.OnComplete.Resolve();
-                    }
+                    loadParams.OnComplete?.Resolve();
                 },
                 exception =>
                 {
-                    if (loadParams.OnComplete != null)
-                    {
-                        loadParams.OnComplete.Reject(exception);
-                    }
+                    loadParams.OnComplete?.Reject(exception);
                 }
             );
         }

@@ -61,17 +61,11 @@ namespace PG.Core.Commands
                     {
                         Debug.Log(string.Format("{0} , scene loading/unloading completed!", this));
 
-                        if (loadUnloadParams.OnComplete != null)
-                        {
-                            loadUnloadParams.OnComplete.Resolve();
-                        }
+                        loadUnloadParams.OnComplete?.Resolve();
                     },
-                    exception => 
+                    exception =>
                     {
-                        if (loadUnloadParams.OnComplete != null)
-                        {
-                            loadUnloadParams.OnComplete.Reject(exception);
-                        }
+                        loadUnloadParams.OnComplete?.Reject(exception);
                     }
                 );
             }
@@ -79,10 +73,7 @@ namespace PG.Core.Commands
             {
                 Debug.Log(string.Format("{0} , no scenes loaded/unloaded!", this));
 
-                if (loadUnloadParams.OnComplete != null)
-                {
-                    loadUnloadParams.OnComplete.Resolve();
-                }
+                loadUnloadParams.OnComplete?.Resolve();
             }
         }
     }
