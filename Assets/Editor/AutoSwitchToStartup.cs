@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEditor;
 using UnityEngine.SceneManagement;
 
-namespace game.editor
+namespace PG.editor
 {
     public static class PlayFromTheFirstScene
     {

@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d959224d09e3514ea079b28b2010337, type: 3}
+  m_Script: {fileID: 11500000, guid: e72e57f2b22e40dab2269598dc5bccb2, type: 3}
   m_Name: ProjectSettingsInstaller
   m_EditorClassIdentifier: 
   ProjectContextInstaller:

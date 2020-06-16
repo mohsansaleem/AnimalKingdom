@@ -1,4 +1,0 @@
-﻿namespace game.animalKingdom.installer
-{
-
-}
