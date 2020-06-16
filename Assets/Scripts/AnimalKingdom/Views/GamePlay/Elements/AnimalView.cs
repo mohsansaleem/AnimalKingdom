@@ -53,7 +53,6 @@ namespace PG.AnimalKingdom.Views.GamePlay
         {
             set
             {
-                Debug.LogError(value);
                 if (_currentStateBehaviour == null ||
                     _stateBehaviours[value] != _currentStateBehaviour)
                 {

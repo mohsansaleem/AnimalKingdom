@@ -25,7 +25,7 @@ namespace PG.AnimalKingdom.Contexts.Bootstrap
                 CreateMetaDataSignal.CreateMetaData(SignalBus, MetaData).Then(
                     () => {
                         _staticDataModel.SeedMetaData(MetaData);
-                        BootstrapModel.LoadingProgress.Value = BootstrapModel.ELoadingProgress.StaticDataLoaded;
+                        BootstrapModel.LoadingProgress.Value = BootstrapModel.ELoadingProgress.LoadUserData;
                     }
                 ).Catch(e =>
                 {

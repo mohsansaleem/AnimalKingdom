@@ -26,7 +26,7 @@ namespace PG.AnimalKingdom.Contexts.MainHub
         {
             base.Initialize();
             
-            StateBehaviours.Add(typeof(MainHubStateDefault), new MainHubStateDefault(this));
+            StateBehaviours.Add((int)MainHubModel.EMainHubState.Default, new MainHubStateDefault(this));
             
             _bootstrapModel.LoadingProgress.Subscribe(OnBootstrapState).AddTo(Disposables);
             _mainHubModel.MainHubState.Subscribe(OnMainHubStateChanged).AddTo(Disposables);
@@ -47,23 +47,7 @@ namespace PG.AnimalKingdom.Contexts.MainHub
         
         private void OnMainHubStateChanged(MainHubModel.EMainHubState mainHubState)
         {
-            Type targetType = null;
-            switch (mainHubState)
-            {
-                case MainHubModel.EMainHubState.Default:
-                    targetType = typeof(MainHubStateDefault);
-                    break;
-                default:
-                    Debug.LogError("Add the Missing State.");
-                    break;
-            }
-
-            if (targetType != null &&
-                (CurrentStateBehaviour == null ||
-                 targetType != CurrentStateBehaviour.GetType()))
-            {
-                GoToState(targetType);
-            }
+            GoToState((int)mainHubState);
         }
     }
 }

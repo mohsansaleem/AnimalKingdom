@@ -27,7 +27,7 @@ namespace PG.AnimalKingdom.Contexts.Bootstrap
                         //ShowYesNoPopup();            
                     #endif
                         
-                        BootstrapModel.LoadingProgress.Value = BootstrapModel.ELoadingProgress.PopupLoaded;
+                        BootstrapModel.LoadingProgress.Value = BootstrapModel.ELoadingProgress.LoadStaticData;
                     },
                 exception =>
                 {

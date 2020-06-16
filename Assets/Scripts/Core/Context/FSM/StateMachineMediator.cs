@@ -4,13 +4,14 @@ using PG.Core.installer;
 using Zenject;
 using RSG;
 using UniRx;
+using UnityEngine;
 
 namespace PG.Core.Context
 {
     public class StateMachineMediator : IInitializable, ITickable, IDisposable
     {
         protected StateBehaviour CurrentStateBehaviour;
-        protected Dictionary<Type, StateBehaviour> StateBehaviours = new Dictionary<Type, StateBehaviour>();
+        protected Dictionary<int, StateBehaviour> StateBehaviours = new Dictionary<int, StateBehaviour>();
 
 
         protected CompositeDisposable Disposables;
@@ -29,7 +30,19 @@ namespace PG.Core.Context
             GoToState(signal.stateType);
         }
 
-        public virtual void GoToState(Type stateType)
+        public virtual void GoToState(int stateType)
+        {
+            if (!StateBehaviours.ContainsKey(stateType))
+            {
+                Debug.LogWarning("State Missing in Mediator.");
+            }
+            else if(CurrentStateBehaviour == null || StateBehaviours[stateType] != CurrentStateBehaviour)
+            {
+                GoToStateInternal(stateType);
+            }
+        }
+        
+        private void GoToStateInternal(int stateType)
         {
             if (StateBehaviours.ContainsKey(stateType))
             {
@@ -38,11 +51,12 @@ namespace PG.Core.Context
                     CurrentStateBehaviour.OnStateExit();
                 }
                 CurrentStateBehaviour = StateBehaviours[stateType];
-                if (SceneInstaller != null && CurrentStateBehaviour.IsValidOpenState())
-                {
-                    SceneInstaller.OnNewValidOpenState(stateType);
-                }
+                
                 CurrentStateBehaviour.OnStateEnter();
+            }
+            else
+            {
+                Debug.LogError($"State Id[{stateType}] doesn't Exist in the Dictionary.");
             }
         }
 

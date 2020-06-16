@@ -7,13 +7,13 @@ namespace PG.AnimalKingdom.Models.Context
         public enum ELoadingProgress
         {
             NotLoaded = -1,
-            Zero = 0,
-            PopupLoaded = 20,
-            MetaNotFound = 25,
-            StaticDataLoaded = 30,
-            UserNotFound = 50,
-            DataSeeded = 70,
-            HudLoaded = 80,
+            LoadPopup = 0,
+            LoadStaticData = 20,
+            CreateMetaData = 25,
+            LoadUserData = 30,
+            CreateUserData = 50,
+            LoadHud = 70,
+            LoadMainHub = 80,
             MainHub = 100,
             GamePlay = 110
         }
@@ -22,7 +22,7 @@ namespace PG.AnimalKingdom.Models.Context
 
         public BootstrapModel()
         {
-            LoadingProgress = new ReactiveProperty<ELoadingProgress>(ELoadingProgress.Zero);
+            LoadingProgress = new ReactiveProperty<ELoadingProgress>(ELoadingProgress.LoadPopup);
         }
     }
 }

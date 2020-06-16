@@ -25,7 +25,7 @@ namespace PG.AnimalKingdom.Contexts.Bootstrap
                 CreateUserDataSignal.CreateUserData(SignalBus, userData).Then(
                     () => {
                         _remoteDataModel.SeedUserData(userData);
-                        BootstrapModel.LoadingProgress.Value = BootstrapModel.ELoadingProgress.DataSeeded;
+                        BootstrapModel.LoadingProgress.Value = BootstrapModel.ELoadingProgress.LoadHud;
                     }
                 ).Catch(e =>
                 {

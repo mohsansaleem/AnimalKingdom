@@ -25,8 +25,8 @@ namespace PG.AnimalKingdom.Contexts.Hud
         {
             base.Initialize();
             
-            StateBehaviours.Add(typeof(HudStateHidden), new HudStateHidden(this));
-            StateBehaviours.Add(typeof(HudStateGamePlay), new HudStateGamePlay(this));
+            StateBehaviours.Add((int)HudModel.EHudState.Hidden, new HudStateHidden(this));
+            StateBehaviours.Add((int)HudModel.EHudState.GamePlay, new HudStateGamePlay(this));
 
             _remoteDataModel.Coins.Subscribe(OnIdleCashUpdate).AddTo(Disposables);
             _remoteDataModel.HeroModel.RemainingTime.Subscribe(OnTimerUpdate).AddTo(Disposables);
@@ -60,24 +60,7 @@ namespace PG.AnimalKingdom.Contexts.Hud
 
         private void OnHudStateChanged(HudModel.EHudState hudState)
         {
-            Type targetType = null;
-            
-            switch (hudState)
-            {
-                case HudModel.EHudState.Hidden:
-                    targetType = typeof(HudStateHidden);
-                    break;
-                case HudModel.EHudState.GamePlay:
-                    targetType = typeof(HudStateGamePlay);
-                    break;
-            }
-
-            if (targetType != null &&
-                (CurrentStateBehaviour == null ||
-                 targetType != CurrentStateBehaviour.GetType()))
-            {
-                GoToState(targetType);
-            }
+            GoToState((int)hudState);
         }
     }
 }

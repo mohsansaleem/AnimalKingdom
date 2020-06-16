@@ -21,7 +21,7 @@ namespace PG.AnimalKingdom.Contexts.Bootstrap
                 (
                     () =>
                     {
-                        BootstrapModel.LoadingProgress.Value = BootstrapModel.ELoadingProgress.HudLoaded;
+                        BootstrapModel.LoadingProgress.Value = BootstrapModel.ELoadingProgress.LoadMainHub;
                     },
                 exception =>
                 {

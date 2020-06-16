@@ -17,11 +17,11 @@ namespace PG.AnimalKingdom.Contexts.Bootstrap
                 LoadUserDataSignal.LoadUserData(SignalBus).Then(
                     () =>
                     {
-                        BootstrapModel.LoadingProgress.Value = BootstrapModel.ELoadingProgress.DataSeeded;
+                        BootstrapModel.LoadingProgress.Value = BootstrapModel.ELoadingProgress.LoadHud;
                     }
                 ).Catch(e =>
                 {
-                    BootstrapModel.LoadingProgress.Value = BootstrapModel.ELoadingProgress.UserNotFound;
+                    BootstrapModel.LoadingProgress.Value = BootstrapModel.ELoadingProgress.CreateUserData;
                 });
             }
         }

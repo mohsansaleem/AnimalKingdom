@@ -39,10 +39,10 @@ namespace PG.AnimalKingdom.Contexts.GamePlay
         {
             base.Initialize();
 
-            StateBehaviours.Add(typeof(GamePlayStateLoad), new GamePlayStateLoad(this));
-            StateBehaviours.Add(typeof(GamePlayStateGathering), new GamePlayStateGathering(this));
-            StateBehaviours.Add(typeof(GamePlayStateUnloading), new GamePlayStateUnloading(this));
-            StateBehaviours.Add(typeof(GamePlayStatePause), new GamePlayStatePause(this));
+            StateBehaviours.Add((int)GamePlayModel.EGamePlayState.Load, new GamePlayStateLoad(this));
+            StateBehaviours.Add((int)GamePlayModel.EGamePlayState.Gathering, new GamePlayStateGathering(this));
+            StateBehaviours.Add((int)GamePlayModel.EGamePlayState.Unloading, new GamePlayStateUnloading(this));
+            StateBehaviours.Add((int)GamePlayModel.EGamePlayState.Pause, new GamePlayStatePause(this));
 
             OnGamePlayStateChanged(GamePlayModel.EGamePlayState.Load);
 
@@ -173,29 +173,7 @@ namespace PG.AnimalKingdom.Contexts.GamePlay
 
         private void OnGamePlayStateChanged(GamePlayModel.EGamePlayState gamePlayState)
         {
-            Type targetType = null;
-            switch (gamePlayState)
-            {
-                case GamePlayModel.EGamePlayState.Load:
-                    targetType = typeof(GamePlayStateLoad);
-                    break;
-                case GamePlayModel.EGamePlayState.Gathering:
-                    targetType = typeof(GamePlayStateGathering);
-                    break;
-                case GamePlayModel.EGamePlayState.Unloading:
-                    targetType = typeof(GamePlayStateUnloading);
-                    break;
-                case GamePlayModel.EGamePlayState.Pause:
-                    targetType = typeof(GamePlayStatePause);
-                    break;
-            }
-
-            if (targetType != null &&
-                (CurrentStateBehaviour == null ||
-                 targetType != CurrentStateBehaviour.GetType()))
-            {
-                GoToState(targetType);
-            }
+            GoToState((int)gamePlayState);
         }
     }
 }

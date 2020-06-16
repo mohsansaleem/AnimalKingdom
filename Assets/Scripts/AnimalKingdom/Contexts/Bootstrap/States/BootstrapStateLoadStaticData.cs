@@ -19,11 +19,11 @@ namespace PG.AnimalKingdom.Contexts.Bootstrap
                 LoadStaticDataSignal.LoadStaticData(SignalBus).Then(
                     () =>
                     {
-                        BootstrapModel.LoadingProgress.Value = BootstrapModel.ELoadingProgress.StaticDataLoaded;
+                        BootstrapModel.LoadingProgress.Value = BootstrapModel.ELoadingProgress.LoadUserData;
                     }
                 ).Catch(e =>
                 {
-                    BootstrapModel.LoadingProgress.Value = BootstrapModel.ELoadingProgress.MetaNotFound;
+                    BootstrapModel.LoadingProgress.Value = BootstrapModel.ELoadingProgress.CreateMetaData;
                 });
             }
         }
