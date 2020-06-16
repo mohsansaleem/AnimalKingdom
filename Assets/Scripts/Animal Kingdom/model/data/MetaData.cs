@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Sirenix.OdinInspector;
+using UnityEngine;
 
 namespace game.animalKingdom.model.data
 {
@@ -9,10 +9,10 @@ namespace game.animalKingdom.model.data
     {
         public float GameTime;
         
-        [MinValue(1), MaxValue(100)]
+        [Range(1, 100)]
         public int FarmSpace;
         
-        [MinValue(1), MaxValue(100)]
+        [Range(1, 100)]
         public int HeroSpace;
         
         // Animals in the Game.

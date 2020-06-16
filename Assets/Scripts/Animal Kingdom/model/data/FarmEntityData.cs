@@ -1,12 +1,12 @@
 ﻿using System;
-using Sirenix.OdinInspector;
+using UnityEngine;
 
 namespace game.animalKingdom.model.data
 {
     [Serializable]
     public class FarmEntityData
     {
-        [MinValue(1), MaxValue(100)]
+        [Range(1, 100)]
         public float MoveSpeed;
     }
 }

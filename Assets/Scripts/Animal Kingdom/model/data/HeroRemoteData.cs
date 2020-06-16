@@ -2,14 +2,14 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using Sirenix.OdinInspector;
+using UnityEngine;
 
 namespace game.animalKingdom.model.data
 {
     [Serializable]
     public class HeroRemoteData : FarmEntityRemoteData
     {
-        [MinValue(1)]
+        [Min(1)]
         public int HeroLevel;
 
         // Id of the Animals in the Group.

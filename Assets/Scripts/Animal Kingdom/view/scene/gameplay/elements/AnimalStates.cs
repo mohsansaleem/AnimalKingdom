@@ -1,7 +1,4 @@
 ﻿using System.Collections.Generic;
-using game.animalKingdom.installer;
-using game.animalKingdom.model.remote;
-using game.animalKingdom.model.scene;
 using game.core;
 using UnityEngine;
 
@@ -51,6 +48,11 @@ namespace game.animalKingdom.view
         {
             base.OnStateEnter();
             
+            // Disabling auto-braking allows for continuous movement
+            // between points (ie, the agent doesn't slow down as it
+            // approaches a destination point).
+            View.Agent.autoBraking = false;
+
             MoveToNextTarget();
         }
 
@@ -62,11 +64,10 @@ namespace game.animalKingdom.view
         public override void Tick()
         {
             base.Tick();
-            
-            float distanceToTarget = Vector3.Distance( View.transform.position, 
-                _positions[_currTargetIndex]);
-            
-            if(distanceToTarget < View.Agent.stoppingDistance)
+
+            // Choose the next destination point when the agent gets
+            // close to the current one.
+            if(!View.Agent.pathPending && View.Agent.remainingDistance <= View.Agent.stoppingDistance)
             {
                 MoveToNextTarget();
             }

@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using game.animalKingdom.model.remote;
 using game.core;
 using pg.core.assets;
 using RSG;
 using UnityEngine;
-using Zenject;
 
 namespace game.animalKingdom.view
 {

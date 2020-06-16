@@ -1,5 +1,5 @@
 ﻿using System;
-using Sirenix.OdinInspector;
+using UnityEngine;
 
 namespace game.animalKingdom.model.data
 {
@@ -17,13 +17,13 @@ namespace game.animalKingdom.model.data
     {
         public EAnimalType AnimalType;
         
-        [MinValue(1)]
+        [Min(1)]
         public int PenPoints;
 
-        [MinValue(1)] 
+        [Min(1)] 
         public float PatrolSpeed;
         
-        [MinValue(1), MaxValue(20)]
+        [Range(1, 20)]
         public int OccupiedSpace;
     }
 }

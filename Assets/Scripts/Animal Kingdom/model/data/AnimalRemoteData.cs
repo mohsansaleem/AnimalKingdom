@@ -1,7 +1,6 @@
 ﻿
 using Newtonsoft.Json;
 using System;
-using UnityEngine;
 
 namespace game.animalKingdom.model.data
 {

@@ -17,19 +17,19 @@ namespace game.animalKingdom.view
             CreateAnimalsPool();
             
             Container.DeclareSignal<ResetGameSignal>().RunAsync();
-            Container.BindSignal<ResetGameSignal>().ToMethod<ResetGameCommand>((x, y) => x.Execute(y)).FromNew();
+            Container.BindSignal<ResetGameSignal>().ToMethod<ResetGameCommand>(x => x.Execute).FromNew();
             
             Container.DeclareSignal<GameTickSignal>().RunAsync();
-            Container.BindSignal<GameTickSignal>().ToMethod<GameTickCommand>((x, y) => x.Execute(y)).FromNew();
+            Container.BindSignal<GameTickSignal>().ToMethod<GameTickCommand>(x => x.Execute).FromNew();
             
             Container.DeclareSignal<UnloadGroupSignal>().RunAsync();
-            Container.BindSignal<UnloadGroupSignal>().ToMethod<UnloadGroupCommand>((x, y) => x.Execute(y)).FromNew();
+            Container.BindSignal<UnloadGroupSignal>().ToMethod<UnloadGroupCommand>(x => x.Execute).FromNew();
 
             Container.DeclareSignal<SpawnIfSpaceSignal>().RunAsync();
-            Container.BindSignal<SpawnIfSpaceSignal>().ToMethod<SpawnIfSpaceCommand>((x, y) => x.Execute(y)).FromNew();
+            Container.BindSignal<SpawnIfSpaceSignal>().ToMethod<SpawnIfSpaceCommand>(x => x.Execute).FromNew();
             
             Container.DeclareSignal<AddAnimalToGroupSignal>().RunAsync();
-            Container.BindSignal<AddAnimalToGroupSignal>().ToMethod<AddAnimalToGroupCommand>((x, y) => x.Execute(y)).FromNew();
+            Container.BindSignal<AddAnimalToGroupSignal>().ToMethod<AddAnimalToGroupCommand>(x => x.Execute).FromNew();
             
             Container.BindInterfacesTo<GamePlayMediator>().AsSingle();
         }

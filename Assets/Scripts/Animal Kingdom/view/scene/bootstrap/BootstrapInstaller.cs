@@ -13,19 +13,19 @@ namespace game.animalKingdom.view
         public override void InstallBindings()
         {
             Container.DeclareSignal<LoadStaticDataSignal>().RunAsync();
-            Container.BindSignal<LoadStaticDataSignal>().ToMethod<LoadStaticDataCommand>((x, promise) => x.Execute(promise)).FromNew();
+            Container.BindSignal<LoadStaticDataSignal>().ToMethod<LoadStaticDataCommand>(x => x.Execute).FromNew();
 
             Container.DeclareSignal<CreateMetaDataSignal>().RunAsync();
-            Container.BindSignal<CreateMetaDataSignal>().ToMethod<CreateMetaDataCommand>((x, param) => x.Execute(param)).FromNew();
+            Container.BindSignal<CreateMetaDataSignal>().ToMethod<CreateMetaDataCommand>(x => x.Execute).FromNew();
             
             Container.DeclareSignal<LoadUserDataSignal>().RunAsync();
-            Container.BindSignal<LoadUserDataSignal>().ToMethod<LoadUserDataCommand>((x, promise) => x.Execute(promise)).FromNew();
+            Container.BindSignal<LoadUserDataSignal>().ToMethod<LoadUserDataCommand>(x => x.Execute).FromNew();
 
             Container.DeclareSignal<SaveUserDataSignal>().RunAsync();
-            Container.BindSignal<SaveUserDataSignal>().ToMethod<SaveUserDataCommand>((x, y) => x.Execute(y)).FromNew();
+            Container.BindSignal<SaveUserDataSignal>().ToMethod<SaveUserDataCommand>(x => x.Execute).FromNew();
 
             Container.DeclareSignal<CreateUserDataSignal>().RunAsync();
-            Container.BindSignal<CreateUserDataSignal>().ToMethod<CreateUserDataCommand>((x, param) => x.Execute(param)).FromNew();
+            Container.BindSignal<CreateUserDataSignal>().ToMethod<CreateUserDataCommand>(x => x.Execute).FromNew();
 
             Container.BindInstances(_view);
             Container.BindInterfacesTo<BootstrapMediator>().AsSingle();

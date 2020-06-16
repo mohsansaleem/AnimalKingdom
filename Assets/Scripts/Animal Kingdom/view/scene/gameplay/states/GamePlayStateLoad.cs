@@ -1,6 +1,5 @@
 ﻿using game.animalKingdom.model.scene;
 using RSG;
-using Sirenix.Utilities;
 
 namespace game.animalKingdom.view
 {
@@ -27,17 +26,18 @@ namespace game.animalKingdom.view
             {
                 Promise<AnimalView> promise = null;
 
-                RemoteDataModel.AnimalRemoteDatas.ForEach((animalData) =>
+                foreach (var animalRemoteDataModel in RemoteDataModel.AnimalRemoteDatas)
                 {
                     if (promise == null)
                     {
-                        promise = (Promise<AnimalView>) Mediator.SpawnAnimal(animalData.Value);
+                        promise = (Promise<AnimalView>) Mediator.SpawnAnimal(animalRemoteDataModel.Value);
                     }
                     else
                     {
-                        promise = (Promise<AnimalView>)promise.Then((v) => Mediator.SpawnAnimal(animalData.Value));
+                        promise = (Promise<AnimalView>)promise.Then((v) => 
+                            Mediator.SpawnAnimal(animalRemoteDataModel.Value));
                     }
-                });
+                }
 
                 return promise;
             }
