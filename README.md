@@ -2,6 +2,13 @@
 
 This is a simple farm game with the raw UI. Primary purpose of this project was to implement an expandable architecture. 
 
+We can move around in the Map and gather animals and get some cash after moving them to Farm.
+
+__Video__
+
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/momBUi4V770/0.jpg)](http://www.youtube.com/watch?v=momBUi4V770 "Animal Kingdom")
+
+
 ##### Highlights:
   - Unity 2019.4.0f1
   - MVP
