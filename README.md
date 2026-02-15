@@ -1,74 +1,89 @@
-# AnimalKingdom
+# Animal Kingdom
+**Modular Farm Simulation with Reusable Generic Systems**
 
-This is a simple farm game with the raw UI. Primary purpose of this project was to implement an expandable architecture. 
+A technical demonstration of scalable, modular architecture designed for rapid feature expansion. Showcases production-grade patterns including generic popup systems, state machines, and persistent game state—techniques refined over 10+ years building mobile titles at Ubisoft and other studios.
 
-We can move around in the Map and gather animals and get some cash after moving them to Farm.
+## 🎥 Demo
+[![Watch Demo](http://img.youtube.com/vi/momBUi4V770/0.jpg)](http://www.youtube.com/watch?v=momBUi4V770 "Animal Kingdom Demo")
 
-__Video__
+## 🎮 Core Gameplay
 
-[![IMAGE ALT TEXT](http://img.youtube.com/vi/momBUi4V770/0.jpg)](http://www.youtube.com/watch?v=momBUi4V770 "Animal Kingdom")
+**Resource Gathering** – Explore the map to collect animals  
+**Economic Loop** – Convert captured animals to cash at the farm  
+**Persistent State** – Save/load game progress with metadata-driven configuration
 
+## 🏗️ Technical Architecture
 
-##### Highlights:
-  - Unity 2019.4.0f1
-  - MVP
-  - Dependency Injection
-  - Reactive Programing
-  - Promises
-  - State Machine
-  - Generic Popup System
-  - Generic Pooling System
+**Scalable Design Patterns:**
+- **MVP Architecture** – Strict separation enabling parallel development
+- **Generic Popup System** – Reusable UI framework for dialogs and notifications
+- **State Machine** – Clean state transitions (Gathering, Navigation, Farm Management)
+- **Generic Object Pooling** – Memory-optimized entity management
+- **Dependency Injection (Zenject)** – Modular components with minimal coupling
+- **Reactive Programming (UniRx)** – Event-driven updates for responsive UI
+- **Promise-based Async** – Non-blocking operations for smooth gameplay
 
-#### Installation
-  - Pull the code.
-  - Use Unity 2019.4.0f1 to open it.
-  - Check /MainMenu/Game/Always Start from Startup Scene.
-  - Press Play.
+**Data Architecture:**
+- Context-driven scene management (Bootstrap → MainHub → GamePlay)
+- Metadata vs GameState separation for clean persistence
+- ScriptableObject-based configuration for designer workflows
+- JSON serialization for save/load functionality
 
-#### Hierarchy Overview:
-  - All the Context code is in __\Assets\Scripts\AnimalKingdon\Contexts__. Each scene has the respective folders including some extra scenes like Popup and MainHub etc.
-  - All the views code is in __\Assets\Scripts\AnimalKingdon\Views__. Each scene has the respective folders.
-  - __GamePlay__ scene has all the __magic__. Especially the Gathering state.
-  - __Bootstrap__ is the starting scene.
-  - __*Data__ files\classes are for __Metadata__ objects.
-  - __*RemoteData__ files/classes are for __GameState__ objects and I am linking the *Data on loading of GameState.
-  - __*RemoteDataModel__ are the Models that contain __RemoteData__ and other reactive properties and collections.
-  - __\Assets\Scripts\Core__ is __submodule__ that contains just the abstract of some generics that can be shared across the project so I have added it to minimise my work.
-  - All the __Scenes__ are in __\Assets\__Scenes__ folder and __respective resources__ are in __\Assets\Resources\Scenes__.
-  - Main __Game code__ is in __\Assets\Scripts\AnimalKingdon__.
-  - (__Models__, __RemoteData__ and __Data__)__s__ are in __\Assets\Scripts\AnimalKingdon\Models__.
-  - All the __Commands__ are in   __\Assets\Scripts\AnimalKingdon\Commands__.
+## 📁 Project Structure
 
+```
+Assets/
+├── Scripts/
+│   ├── AnimalKingdom/
+│   │   ├── Contexts/       # Controllers
+│   │   ├── Views/          # UI and presentation layer
+│   │   ├── Models/         # Data, RemoteData, RemoteDataModels
+│   │   └── Commands/       # Game actions and operations
+│   └── Core/               # Reusable generic abstractions (submodule)
+├── Scenes/                 # Scene files
+└── Resources/Scenes/       # Scene-specific resources
+```
 
-#### Information:
-Delete the /Assets/StreamingAssets/GameState.json & MetaData.json if you want to change the default setting after updating Scriptable Objects.
-Meta is not balanced. So you will have to manage.
+## 🔧 Tech Stack
 
+| Technology | Purpose |
+|-----------|---------|
+| **Unity 2019.4.0f1** | LTS game engine |
+| **Zenject** | Dependency injection framework |
+| **UniRx** | Reactive extensions |
+| **C# Promises** | Asynchronous operations |
 
-| Plugins | Description |
-| ------ | ------ |
-|[Unity3D] | [3D Game Engine.][GE]|
-| [Zenject] | [Dependency Injection.][DE] |
-| [UniRx] | [Reactive Programming.][RP] |
-| [C# Promises] | [Asynchronous coding.][AC] |
+## 🚀 Quick Start
 
+1. Clone the repository
+2. Open with Unity 2019.4.0f1+
+3. Enable **Always Start from Startup Scene** in `/MainMenu/Game/`
+4. Press Play
 
+*Note: Delete `StreamingAssets/GameState.json` and `MetaData.json` to reset after modifying ScriptableObjects.*
 
+## 🎯 Generic Systems Highlight
 
-**Happy Day!**
+**Reusable Popup Framework** – Modal dialog system used across multiple projects  
+**Universal Pooling System** – Generic pooling applicable to any GameObject type  
+**Flexible State Machine** – Adaptable state management for various game modes  
 
-[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
+These systems demonstrate production-ready code designed for reusability across multiple titles—a critical skill for mobile game development where rapid iteration drives success.
 
+## 💼 About the Developer
 
-   [Unity3D]: <https://unity.com/releases/2019-lts>
-   [Zenject]: < https://github.com/svermeulen/Zenject>
-   [UniRx]: <https://github.com/neuecc/UniRx>
-   [C# Promises]: <https://github.com/Real-Serious-Games/C-Sharp-Promise>
-   [Spine]: <http://esotericsoftware.com/>
+Senior Game Developer with 10+ years specializing in mobile game architecture and reusable systems. Experience includes:
+- **Ubisoft** – Mobile titles including Clash of Beasts (war strategy)
+- Custom editor tools reducing designer iteration time
+- Generic systems deployed across multiple production titles
+- Persistent state management for millions of players
 
-   [GE]: <https://en.wikipedia.org/wiki/Game_engine>
-   [DE]: <https://en.wikipedia.org/wiki/Dependency_injection>
-   [RP]: <https://en.wikipedia.org/wiki/Reactive_programming>
-   [AC]: <http://www.what-could-possibly-go-wrong.com/promises-for-game-development/#introduction-to-promises>
-   [SP]: <http://esotericsoftware.com/blog>
+## 📫 Connect
+Building scalable architectures for mobile games or rapid prototyping systems? Let's connect.
 
+[LinkedIn](https://linkedin.com/in/mohsansaleem) | [Portfolio](https://github.com/mohsansaleem)
+
+---
+
+## Topics
+`unity3d` `mvp-architecture` `zenject` `unirx` `state-machine` `promises` `asynchronous-programming` `gamestate` `popup` `pooling`
